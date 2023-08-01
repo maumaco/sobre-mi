@@ -1,3 +1,129 @@
+/* Estilos del elemento body */
+
 body {
+    color: #615e5b;
     font-family: sans-serif;
+    font-size: 1em;
+    line-height: 1.25;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Estilos de los elementos comunes */
+/* h1, h2, h3, p, ul, li y a */
+
+h1 {
+    color: #b03648;
+    font-size: 1.5em;
+    margin: 0;
+}
+
+h2 {
+    color: #b03648;
+    font-size: 1.25em;
+    margin: 1.6em 0 1em;
+}
+
+h3 {
+    color: #5dc1b9;
+    font-size: 1em;
+    margin: 1.25em 0 0.5em;
+}
+
+p {
+    margin: 0.5em 0;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    margin: 0.25em 0;
+}
+
+a {
+    color: #2e98fa;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #1862bb;
+}
+
+
+/* Estilos de las secciones y elementos específicos */
+/* header, nav, main, aside, footer */
+
+.contenedor, main, aside {
+    margin: 0 auto;
+    max-width: 40em;
+    padding: 0 1em;
+}
+
+header {
+    background-color: #eaccad;
+    border-bottom: 1em solid #5dc1b9;
+    margin-bottom: 3em;
+    padding: 1em 0;
+}
+
+header p {
+    margin: 0.25em 0;
+}
+
+#usuario-de-github {
+    display: flex;
+}
+
+#usuario-de-github img {
+    margin-right: 0.25em;
+}
+
+nav ul {
+    font-size: 0.875em;
+}
+
+.sitio {
+    display: flex;
+    justify-content: space-between;
+}
+
+.imagen-del-sitio, .video-del-sitio {
+    width: 48%;
+}
+
+.imagen-del-sitio img, .video-del-sitio video {
+    height: auto;
+    width: 100%;
+}
+
+footer {
+    background-color: #5dc1b9;
+    margin-top: 3em;
+    padding: 1em 0;
+}
+
+footer p {
+    font-size: 0.875em;
+    margin: 0;
+}
+
+
+/* Estilos para los diferentes dispositivos */
+/* A mayor ancho de pantalla, mayor tamaño de letra */
+
+@media (min-width: 401px) and (max-width: 800px) {
+    body {
+        font-size: 1.125em;
+    }
+}
+
+@media (min-width: 801px) {
+    body {
+        font-size: 1.25em;
+    }
 }

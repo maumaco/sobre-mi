@@ -3,59 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resumen del [alumno]</title>
+    <title>Mau | Programador web front-end</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <!-- El elemento <header> representa contenido introductorio o ayudas de navegación.
+    Puede haber más de uno. No debe ser descendiente de <address>, <footer> o <header>. -->
     <header>
-        <h1>Información del [alumno]</h1>
+        <div class="contenedor">
+            <h1>Mau</h1>
+            <p>Programador web front-end</p>
+            <p id="usuario-de-github"><img alt="Logo de GitHub" src="logo-de-github.svg" width="24" height="24"> <a href="https://github.com/maumaco">maumaco</a></p>
+        </div>
     </header>
 
+    <!-- El elemento <nav> representa un conjunto de enlaces de navegación.
+    Solo los bloques principales de enlaces de navegación deben estar dentro de un elemento <nav>. -->
     <nav>
-        <!-- Agrega enlaces de navegación aquí (si es necesario) -->
+        <div class="contenedor">
+            <ul>
+                <li>&gt; <a href="#informacion-personal">Información personal</a></li>
+                <li>&gt; <a href="#formacion">Formación</a></li>
+                <li>&gt; <a href="#desarrollos">Desarrollos</a></li>
+                <li>&gt; <a href="#enlaces-relacionados">Enlaces relacionados</a></li>
+            </ul>
+        </div>
     </nav>
 
+    <!-- El elemento <main> representa el contenido principal de un documento.
+    No debe haber más de uno y no debe ser descendiente de <article>, <aside>, <footer>, <header> o <nav>. -->
     <main>
-        <article>
-            <h2>Datos básicos</h2>
-            <!-- Agrega información básica del alumno aquí -->
+        <!-- El elemento <article> representa contenido completo o autónomo.
+        Debe tener sentido por sí mismo. -->
+        <article id="informacion-personal">
+            <h2>Información personal</h2>
             <ul>
-                <li><strong>Nombre:</strong> [Juan Pérez]</li>
-                <li><strong>Edad:</strong> [25 años]</li>
-                <li><strong>País:</strong> [Argentina]</li>
+                <li>Nombre: Mauricio</li>
+                <li>Apellido: Margarit Cornejo</li>
+                <li>Edad: 44 años</li>
+                <li>País: Argentina</li>
             </ul>
         </article>
 
-        <article>
-            <h2>Intereses</h2>
-            <!-- Agrega los intereses del alumno aquí -->
-            <ul>
-                <li>[Programación web]</li>
-                <li>[Deportes]</li>
-                <li>[Lectura]</li>
-            </ul>
+        <article id="formacion">
+            <h2>Formación</h2>
+            <article>
+                <h3>Introducción a la programación (INTI)</h3>
+                <p>Fundamentos de la programación. Programación imperativa y estructura de datos. Programación orientada a objetos.</p>
+                <p>60 horas cátedra. 6 semanas. Modalidad virtual asincrónica.</p>    
+            </article>
+            <article>
+                <h3>Programación imperativa en JavaScript (FAMAF-UNC)</h3>
+                <p>Entorno de programación. Programar en el editor. Variables, constantes y sus tipos. Comandos básicos. Condicionales. Ciclos. Funciones.</p>
+                <p>104 horas cátedra. 8 semanas. Modalidad virtual sincrónica y asincrónica.</p>
+            </article>
+            <article>
+                <h3>Páginas web con componentes dinámicos (FAMAF-UNC)</h3>
+                <p>¿Cómo está hecha una página web? Elementos y contenidos. Ponele estilo. JavaScript simple para modificar cosas (DOM y eventos). Introducción a React y componentes React.</p>
+                <p>104 horas cátedra. 8 semanas. Modalidad virtual sincrónica y asincrónica.</p>
+            </article>
         </article>
 
-        <article>
-            <h2>Experiencias</h2>
-            <!-- Agrega las experiencias del alumno aquí -->
-            <p>[Trabajé como desarrollador web en una pequeña agencia durante 2 años.]</p>
-        </article>
-
-        <article>
-            <h2>[Imagen y video]</h2>
-            <!-- Agregar imágenes y un video relacionado -->
-            <p><img alt="Documentación" src="https://git-scm.com/images/icons/nav-documentation@2x.png" width="148" height="148"></p>
-            <p><video src="" controls=""></video></p>
+        <article id="desarrollos">
+            <h2>Desarrollos</h2>
+            <article>
+                <h3>Sitio web de Fundación La Morera</h3>
+                <p>Desarrollo desde cero del sitio web con HTML, CSS, JavaScript y PHP.</p>
+                <div class="sitio">
+                    <p class="imagen-del-sitio"><a href="https://fundacionlamorera.org.ar/" title="Ir al sitio web de Fundación La Morera"><img alt="Sitio web de Fundación La Morera" src="sitio-de-fundacion-la-morera.png" width="342" height="192"></a></p>
+                    <p class="video-del-sitio">
+                        <video width="342" height="192" controls>
+                            <source src="video-de-fundacion-la-morera.mp4" type="video/mp4">
+                                El navegador no soporta el elemento &lt;video&gt;.
+                        </video>
+                    </p>
+                </div>
+            </article>
         </article>
     </main>
 
-    <aside>
-        <!-- Agrega contenido adicional o enlaces relacionados aquí (si es necesario) -->
+    <!-- El elemento <aside> representa contenido aparte del contenido con el cual está vinculado.
+    Debe estar indirectamente relacionado con el contenido que lo rodea. -->
+    <aside id="enlaces-relacionados">
+        <article>
+            <h2>Enlaces relacionados</h2>
+            <ul>
+                <li>&gt; <a href="https://fundacionlamorera.org.ar/">Fundación La Morera</a></li>
+                <li>&gt; <a href="https://www.argentina.gob.ar/inti">INTI</a></li>
+                <li>&gt; <a href="https://www.famaf.unc.edu.ar/">FAMAF-UNC</a></li>
+                <li>&gt; <a href="https://www.argentina.gob.ar/economia/conocimiento/argentina-programa">Argentina Programa</a></li>
+            </ul>
+        </article>
     </aside>
 
+    <!-- El elemento <footer> representa contenido de pie de página del documento o una parte del mismo.
+    Puede haber más de uno. -->
     <footer>
-        <!-- Agrega información del pie de página aquí -->
+        <div class="contenedor">
+            <p>Esta página utiliza el servicio <a href="https://pages.github.com/">GitHub Pages</a> de <a href="https://github.com/">GitHub</a></p>
+        </div>
     </footer>
+
 </body>
 </html>
