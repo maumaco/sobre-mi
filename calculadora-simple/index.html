@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora simple</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>Calculadora simple</h1>
+  </header>
+
+  <main>
+    <p><input id="operando-1" type="text" placeholder="Operando 1" autofocus></p>
+    <p id="error-operando-1" class="error"></p>
+
+    <p>
+      <select id="operacion">
+        <option value="suma">+</option>
+        <option value="resta">-</option>
+        <option value="multiplicacion">*</option>
+        <option value="division">/</option>
+      </select>
+    </p>
+
+    <p><input id="operando-2" type="text" placeholder="Operando 2"></p>
+    <p id="error-operando-2" class="error"></p>
+
+    <p><button id="calcular" type="button">Calcular</button></p>
+
+    <p id="resultado"></p>
+    <p id="error-resultado" class="error"></p>
+
+    <p>
+      <button id="reiniciar" type="button">Reiniciar</button>
+      <button id="continuar" type="button">Continuar</button>
+    </p>
+    <p id="error-continuar" class="error"></p>
+  </main>
+
+  <address>
+    <p id="desarrollador">Desarrollado por <a href="https://maumaco.github.io/sobre-mi/">Mau</a></p>
+    <p id="codigo">Ver <a href="https://github.com/maumaco/sobre-mi/tree/main/calculadora-simple">código</a></p>
+  </address>
+
+  <script src="main.js"></script>
+</body>
+</html>

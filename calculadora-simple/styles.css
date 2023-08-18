@@ -1,0 +1,152 @@
+/* Elemento <html> */
+
+html {
+  background-color: #fafafa;
+}
+
+
+/* Elemento <body> */
+
+body {
+  color: #575757;
+  font-family: sans-serif;
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+
+/* Elementos en bloque */
+
+p {
+  margin: 1em;
+}
+
+
+/* Elementos en línea */
+
+a {
+  color: #2e98fa;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+/* Elementos contenedores */
+
+header {
+  background-color: #1c5560;
+  color: #fafafa;
+  padding: 0.5em 0;
+}
+
+main, h1, address {
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: 22em;
+  padding: 0 0.5em;
+}
+
+main {
+  margin-top: 4em;
+}
+
+h1 {
+  font-size: 1.5em;
+  font-weight: normal;
+}
+
+address {
+  display: flex;
+  justify-content: space-between;
+  font-style: normal;
+}
+
+
+/* Elementos de <main> */
+
+input[type="text"], select, button[type="button"] {
+  box-sizing: border-box;
+  font-size: 1em;
+}
+
+input[type="text"] {
+  border: 2px solid #4d8f81;
+  color: #1c5560;
+  outline: none;
+  padding: 0.5em;
+  text-align: center;
+  width: 100%;
+}
+
+input[type="text"]:focus {
+  border-color: #1c5560;
+  transition: 0.5s;
+}
+
+.error, #resultado {
+  background-color: #ffffff;
+  border: 1px solid #aeaeae;
+  padding: 0.5em;
+}
+
+.error:empty, #resultado:empty {
+  border: none;
+  padding: 0;
+}
+
+.error {
+  border-left: 8px solid #f22b56;
+  font-size: 0.75em;
+}
+
+#error-operando-1, #error-operando-2 {
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
+#resultado, #error-resultado {
+  margin-bottom: 2em;
+  margin-top: 2em;
+}
+
+#resultado {
+  border-left: 8px solid #79ae92;
+}
+
+#operacion {
+  padding: 0.5em;
+  text-align: center;
+  width: 24%;
+}
+
+#calcular, #reiniciar, #continuar {
+  color: #fafafa;
+  background-color: #1c5560;
+  border: none;
+  outline: none;
+  padding: 0.5em;
+  width: 48%;
+}
+
+#calcular:hover, #reiniciar:hover, #continuar:hover {
+  background-color: #4d8f81;
+  transition: 0.5s;
+}
+
+#calcular:focus, #reiniciar:focus, #continuar:focus {
+  background-color: #4d8f81;
+  transition: 0.5s;
+}
+
+
+/* Elementos de <addrress> */
+
+#desarrollador, #codigo {
+  font-size: 0.75em;
+}
