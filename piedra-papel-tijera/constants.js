@@ -1,0 +1,1 @@
+const ID_PLAY_BUTTON = 'play-button';
