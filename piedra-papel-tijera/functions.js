@@ -1,9 +1,9 @@
 function setDefaultConfiguration() {
-  setControlDisabled(document.getElementById(ID_ROUNDS_INPUT), true);
-  setControlDisabled(document.getElementById(ID_PLAY_BUTTON), true);
-  setControlDisabled(document.getElementById(ID_RESET_BUTTON), true);
-  setControlSize(document.getElementById(ID_ROUNDS_INPUT), CONF_DEFAULT_ROUNDS_INPUT_SIZE);
-  setControlValue(document.getElementById(ID_ROUNDS_INPUT), CONF_DEFAULT_ROUNDS);
+  setControlDisabled(EL_ROUNDS_INPUT, true);
+  setControlDisabled(EL_PLAY_BUTTON, true);
+  setControlDisabled(EL_RESET_BUTTON, true);
+  setControlSize(EL_ROUNDS_INPUT, CONF_DEFAULT_ROUNDS_INPUT_SIZE);
+  setControlValue(EL_ROUNDS_INPUT, CONF_DEFAULT_ROUNDS);
 }
 
 
@@ -38,15 +38,15 @@ function validateRounds(rounds) {
   let error = searchRoundsError(rounds);
 
   if (error) {
-    setControlDisabled(document.getElementById(ID_NAME_INPUT), true);
-    setControlDisabled(document.getElementById(ID_PLAY_BUTTON), true);
+    setControlDisabled(EL_NAME_INPUT, true);
+    setControlDisabled(EL_PLAY_BUTTON, true);
     setMessage(error);
   }
   else {
-    setControlDisabled(document.getElementById(ID_NAME_INPUT), false);
-    setControlDisabled(document.getElementById(ID_PLAY_BUTTON), false);
+    setControlDisabled(EL_NAME_INPUT, false);
+    setControlDisabled(EL_PLAY_BUTTON, false);
     setMessage('');
-    document.getElementById(ID_PLAY_BUTTON).focus();
+    EL_PLAY_BUTTON.focus();
   }
 }
 
@@ -54,16 +54,16 @@ function validateUserName(userName) {
   let error = searchUserNameError(userName);
 
   if (error) {
-    setControlDisabled(document.getElementById(ID_ROUNDS_INPUT), true);
-    setControlDisabled(document.getElementById(ID_PLAY_BUTTON), true);
+    setControlDisabled(EL_ROUNDS_INPUT, true);
+    setControlDisabled(EL_PLAY_BUTTON, true);
     setMessage(error);
   }
   else {
-    setControlDisabled(document.getElementById(ID_ROUNDS_INPUT), false);
-    setControlDisabled(document.getElementById(ID_PLAY_BUTTON), false);
+    setControlDisabled(EL_ROUNDS_INPUT, false);
+    setControlDisabled(EL_PLAY_BUTTON, false);
     setMessage('');
-    setTextContent(document.getElementById(ID_USER_NAME), userName);
-    document.getElementById(ID_PLAY_BUTTON).focus();
+    setTextContent(EL_USER_NAME, userName);
+    EL_PLAY_BUTTON.focus();
   }
 }
 
@@ -121,11 +121,11 @@ function setMessage(message) {
 }
 
 function showMessage(message) {
-  setTextContent(document.getElementById(ID_MESSAGE_TEXT), message);
+  setTextContent(EL_MESSAGE_TEXT, message);
 }
 
 function deleteMessage() {
-  setTextContent(document.getElementById(ID_MESSAGE_TEXT), '');
+  setTextContent(EL_MESSAGE_TEXT, '');
 }
 
 

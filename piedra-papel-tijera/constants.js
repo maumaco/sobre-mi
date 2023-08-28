@@ -18,3 +18,10 @@ const ID_PLAY_BUTTON = 'play-button';
 const ID_RESET_BUTTON = 'reset-button';
 const ID_ROUNDS_INPUT = 'rounds-input';
 const ID_USER_NAME = 'user-name';
+
+const EL_MESSAGE_TEXT = document.getElementById(ID_MESSAGE_TEXT);
+const EL_NAME_INPUT = document.getElementById(ID_NAME_INPUT);
+const EL_PLAY_BUTTON = document.getElementById(ID_PLAY_BUTTON);
+const EL_RESET_BUTTON = document.getElementById(ID_RESET_BUTTON);
+const EL_ROUNDS_INPUT = document.getElementById(ID_ROUNDS_INPUT);
+const EL_USER_NAME = document.getElementById(ID_USER_NAME);
