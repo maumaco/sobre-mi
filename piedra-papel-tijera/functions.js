@@ -1,3 +1,6 @@
+// CONFIGURACIÓN INICIAL
+
+
 function setDefaultConfiguration() {
   setControlDisabled(EL_ROUNDS_INPUT, true);
   setControlDisabled(EL_PLAY_BUTTON, true);
@@ -8,30 +11,21 @@ function setDefaultConfiguration() {
 
 
 
-function setControlDisabled(control, disabled) {
-  if (control.disabled !== disabled) {
-    control.disabled = disabled;
-  }
+
+// EVENTOS
+
+
+function play() {
 }
 
-function setControlSize(control, size) {
-  if (control.size !== size) {
-    control.size = size;
-  }
-}
 
-function setControlValue(control, value) {
-  if (control.value !== value) {
-    control.value = value;
-  }
-}
+function sanitizeControlValue(control) {
+  let value = control.value.trim();
+  value = value.replace(/\t+/g, ' ');
+  value = value.replace(/ +/g, ' ');
 
-function setTextContent(node, text) {
-  if (node.textContent !== text) {
-    node.textContent = text;
-  }
+  setControlValue(control, value);
 }
-
 
 
 function validateRounds(rounds) {
@@ -50,6 +44,7 @@ function validateRounds(rounds) {
   }
 }
 
+
 function validateUserName(userName) {
   let error = searchUserNameError(userName);
 
@@ -67,6 +62,36 @@ function validateUserName(userName) {
   }
 }
 
+
+
+
+// CONTROLES
+
+
+function setControlDisabled(control, disabled) {
+  if (control.disabled !== disabled) {
+    control.disabled = disabled;
+  }
+}
+
+
+function setControlSize(control, size) {
+  if (control.size !== size) {
+    control.size = size;
+  }
+}
+
+
+function setControlValue(control, value) {
+  if (control.value !== value) {
+    control.value = value;
+  }
+}
+
+
+
+
+// ERRORES
 
 
 function searchRoundsError(rounds) {
@@ -90,6 +115,7 @@ function searchRoundsError(rounds) {
   }
 }
 
+
 function searchUserNameError(userName) {
   if (userName.length === 0) {
     return ERR_VOID_NAME;
@@ -101,14 +127,13 @@ function searchUserNameError(userName) {
 
 
 
-function sanitizeControlValue(control) {
-  let value = control.value.trim();
-  value = value.replace(/\t+/g, ' ');
-  value = value.replace(/ +/g, ' ');
 
-  setControlValue(control, value);
+// MENSAJES
+
+
+function deleteMessage() {
+  setTextContent(EL_MESSAGE_TEXT, '');
 }
-
 
 
 function setMessage(message) {
@@ -120,15 +145,14 @@ function setMessage(message) {
   }
 }
 
+
+function setTextContent(node, text) {
+  if (node.textContent !== text) {
+    node.textContent = text;
+  }
+}
+
+
 function showMessage(message) {
   setTextContent(EL_MESSAGE_TEXT, message);
-}
-
-function deleteMessage() {
-  setTextContent(EL_MESSAGE_TEXT, '');
-}
-
-
-
-function play() {
 }
