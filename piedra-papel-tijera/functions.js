@@ -2,6 +2,7 @@ function setDefaultConfiguration() {
   setControlDisabled(document.getElementById(ID_ROUNDS_INPUT), true);
   setControlDisabled(document.getElementById(ID_PLAY_BUTTON), true);
   setControlDisabled(document.getElementById(ID_RESET_BUTTON), true);
+  setControlSize(document.getElementById(ID_ROUNDS_INPUT), CONF_DEFAULT_ROUNDS_INPUT_SIZE);
   setControlValue(document.getElementById(ID_ROUNDS_INPUT), CONF_DEFAULT_ROUNDS);
 }
 
@@ -13,9 +14,21 @@ function setControlDisabled(control, disabled) {
   }
 }
 
+function setControlSize(control, size) {
+  if (control.size !== size) {
+    control.size = size;
+  }
+}
+
 function setControlValue(control, value) {
   if (control.value !== value) {
     control.value = value;
+  }
+}
+
+function setTextContent(node, text) {
+  if (node.textContent !== text) {
+    node.textContent = text;
   }
 }
 
@@ -25,43 +38,38 @@ function validateRounds(rounds) {
   let error = searchRoundsError(rounds);
 
   if (error) {
-    setMessage(error);
+    setControlDisabled(document.getElementById(ID_NAME_INPUT), true);
     setControlDisabled(document.getElementById(ID_PLAY_BUTTON), true);
-    validRounds = false;
+    setMessage(error);
   }
   else {
+    setControlDisabled(document.getElementById(ID_NAME_INPUT), false);
+    setControlDisabled(document.getElementById(ID_PLAY_BUTTON), false);
     setMessage('');
-    if (validUserName) {
-      setControlDisabled(document.getElementById(ID_PLAY_BUTTON), false);
-    }
-    validRounds = true;
+    document.getElementById(ID_PLAY_BUTTON).focus();
   }
 }
-  
+
 function validateUserName(userName) {
   let error = searchUserNameError(userName);
 
   if (error) {
-    setMessage(error);
     setControlDisabled(document.getElementById(ID_ROUNDS_INPUT), true);
     setControlDisabled(document.getElementById(ID_PLAY_BUTTON), true);
-    validUserName = false;
+    setMessage(error);
   }
   else {
-    setMessage('');
     setControlDisabled(document.getElementById(ID_ROUNDS_INPUT), false);
-    if (validRounds) {
-      setControlDisabled(document.getElementById(ID_PLAY_BUTTON), false);
-    }
-    validUserName = true;
+    setControlDisabled(document.getElementById(ID_PLAY_BUTTON), false);
+    setMessage('');
+    setTextContent(document.getElementById(ID_USER_NAME), userName);
+    document.getElementById(ID_PLAY_BUTTON).focus();
   }
 }
 
 
 
 function searchRoundsError(rounds) {
-  rounds = rounds.trim();
-
   if (rounds.length === 0) {
     return ERR_VOID_ROUNDS;
   }
@@ -83,14 +91,22 @@ function searchRoundsError(rounds) {
 }
 
 function searchUserNameError(userName) {
-  userName = userName.trim();
-
   if (userName.length === 0) {
     return ERR_VOID_NAME;
   }
   else if (userName.length > CONF_NAME_MAX_LENGTH) {
     return ERR_LONG_NAME;
   }
+}
+
+
+
+function sanitizeControlValue(control) {
+  let value = control.value.trim();
+  value = value.replace(/\t+/g, ' ');
+  value = value.replace(/ +/g, ' ');
+
+  setControlValue(control, value);
 }
 
 
@@ -103,17 +119,13 @@ function setMessage(message) {
     deleteMessage();
   }
 }
-    
-function deleteMessage() {
-  if (document.getElementById(ID_MESSAGE_TEXT).innerText !== '') {
-    document.getElementById(ID_MESSAGE_TEXT).innerText = '';
-  }
-}
 
 function showMessage(message) {
-  if (document.getElementById(ID_MESSAGE_TEXT).innerText !== message) {
-    document.getElementById(ID_MESSAGE_TEXT).innerText = message;
-  }
+  setTextContent(document.getElementById(ID_MESSAGE_TEXT), message);
+}
+
+function deleteMessage() {
+  setTextContent(document.getElementById(ID_MESSAGE_TEXT), '');
 }
 
 
