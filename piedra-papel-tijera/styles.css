@@ -5,3 +5,43 @@ body {
   padding: 0;
   text-align: center;
 }
+
+
+/* Animaciones */
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.fade-in {
+  animation-duration: 1s;
+  animation-name: fade-in;
+}
+
+.fade-out {
+  animation-duration: 1s;
+  animation-name: fade-out;
+}
+
+#user-plays .play:hover {
+  transform: scale(1.15);
+  transition: 0.5s;
+}

@@ -59,7 +59,7 @@ function validateUserName(ev) {
     setControlDisabled(EL_ROUNDS_INPUT, false);
     setControlDisabled(EL_PLAY_BUTTON, false);
     deleteMessage();
-    setTextContent(EL_USER_NAME, userName);
+    setTextContent(EL_USER_NAME, EL_NAME_INPUT.value);
     EL_PLAY_BUTTON.focus();
   }
 }
@@ -209,9 +209,9 @@ function playRound(ev) {
 
     setUserPlay(ev.target.id);
   
-    setComputerPlayTimeout = window.setTimeout(setComputerPlay, 1000);
+    setComputerPlayTimeout = window.setTimeout(setComputerPlay, CONF_COMPUTER_PLAY_TIMEOUT_MS);
   
-    setRoundResultTimeout = window.setTimeout(setRoundResult, 2000);  
+    setRoundResultTimeout = window.setTimeout(setRoundResult, CONF_ROUND_RESULT_TIMEOUT_MS);
   }
 }
 
@@ -230,18 +230,23 @@ function removeUserPlaysEventListeners() {
 }
 
 
-function showPlays(els) {
+function hidePlays(els, play) {
   for (let i = 0; i < els.length; i++) {
-    els[i].style.visibility = 'visible';
+    els[i].classList.remove(CLASS_FADE_IN);
+
+    if (!els[i].id.includes(play)) {
+      els[i].style.visibility = 'hidden';
+      els[i].classList.add(CLASS_FADE_OUT);
+    }
   }
 }
 
 
-function hidePlays(els, play) {
+function showPlays(els) {
   for (let i = 0; i < els.length; i++) {
-    if (!els[i].id.includes(play)) {
-      els[i].style.visibility = 'hidden';
-    }
+    els[i].classList.remove(CLASS_FADE_OUT);
+    els[i].style.visibility = 'visible';
+    els[i].classList.add(CLASS_FADE_IN);
   }
 }
 
@@ -280,7 +285,7 @@ function setRoundResult() {
 
   if (!roundWinner) {
     showMessage(MSG_TIE_NO_POINTS);
-    playRoundTimeout = window.setTimeout(playRound, 2000);
+    playRoundTimeout = window.setTimeout(playRound, CONF_PLAY_ROUND_TIMEOUT_MS);
   }
   else {
     switch (roundWinner) {
@@ -292,7 +297,7 @@ function setRoundResult() {
         }
         else {
           showMessage(MSG_USER_POINT);
-          playRoundTimeout = window.setTimeout(playRound, 2000);
+          playRoundTimeout = window.setTimeout(playRound, CONF_PLAY_ROUND_TIMEOUT_MS);
         }
         break;
       case WIN_COMPUTER:
@@ -303,7 +308,7 @@ function setRoundResult() {
         }
         else {
           showMessage(MSG_COMPUTER_POINT);
-          playRoundTimeout = window.setTimeout(playRound, 2000);
+          playRoundTimeout = window.setTimeout(playRound, CONF_PLAY_ROUND_TIMEOUT_MS);
         }
     }
   }

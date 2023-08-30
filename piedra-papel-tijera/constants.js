@@ -1,10 +1,13 @@
 // Configuración
 
+const CONF_COMPUTER_PLAY_TIMEOUT_MS = 1000;
 const CONF_DEFAULT_ROUNDS = 5;
 const CONF_DEFAULT_ROUNDS_INPUT_SIZE = 3;
 const CONF_MAX_ROUNDS = 99;
 const CONF_MIN_ROUNDS = 1;
 const CONF_NAME_MAX_LENGTH = 32;
+const CONF_PLAY_ROUND_TIMEOUT_MS = 1500;
+const CONF_ROUND_RESULT_TIMEOUT_MS = 2000;
 
 
 // Errores
@@ -13,9 +16,9 @@ const ERR_EVEN_ROUNDS = 'El número de rondas debe ser impar';
 const ERR_LONG_NAME = `Tu nombre no puede superar los ${CONF_NAME_MAX_LENGTH} caracteres`;
 const ERR_MAX_ROUNDS = `El número máximo de rondas es ${CONF_MAX_ROUNDS}`;
 const ERR_MIN_ROUNDS = `El número mínimo de rondas es ${CONF_MIN_ROUNDS}`;
-const ERR_NOT_DIGIT = 'Solo puedes ingresar dígitos';
+const ERR_NOT_DIGIT = 'Solo podés ingresar dígitos';
 const ERR_VOID_NAME = 'Es necesario que ingreses un nombre';
-const ERR_VOID_ROUNDS = 'Es necesario que ingreses un número de rondas';
+const ERR_VOID_ROUNDS = 'Es necesario que ingreses un número';
 
 
 // Mensajes
@@ -40,6 +43,12 @@ const PLAY_SCISSORS = 'scissors';
 
 const WIN_COMPUTER = 'computer';
 const WIN_USER = 'user';
+
+
+// Clases
+
+const CLASS_FADE_IN = 'fade-in';
+const CLASS_FADE_OUT = 'fade-out';
 
 
 // Identificadores
