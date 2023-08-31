@@ -1,13 +1,13 @@
 // Configuración
 
 const CONF_COMPUTER_PLAY_TIMEOUT_MS = 1000;
-const CONF_DEFAULT_ROUNDS = 5;
-const CONF_DEFAULT_ROUNDS_INPUT_SIZE = 3;
 const CONF_MAX_ROUNDS = 99;
 const CONF_MIN_ROUNDS = 1;
 const CONF_NAME_MAX_LENGTH = 32;
 const CONF_PLAY_ROUND_TIMEOUT_MS = 1500;
 const CONF_ROUND_RESULT_TIMEOUT_MS = 2000;
+const CONF_ROUNDS = 5;
+const CONF_ROUNDS_INPUT_SIZE = 3;
 
 
 // Errores
@@ -45,13 +45,13 @@ const WIN_COMPUTER = 'computer';
 const WIN_USER = 'user';
 
 
-// Clases
+// Clases (atributo class)
 
-const CLASS_FADE_IN = 'fade-in';
-const CLASS_FADE_OUT = 'fade-out';
+const CLASS_IMAGE_FADE_IN = 'image-fade-in';
+const CLASS_IMAGE_FADE_OUT = 'image-fade-out';
 
 
-// Identificadores
+// Identificadores (atributo id)
 
 const ID_COMPUTER_PLAY_PAPER = 'computer-play-paper';
 const ID_COMPUTER_PLAY_ROCK = 'computer-play-rock';
@@ -89,6 +89,6 @@ const EL_USER_SCORE = document.getElementById(ID_USER_SCORE);
 
 // Arreglos
 
-const ARR_EL_COMPUTER_PLAYS = [EL_COMPUTER_PLAY_PAPER, EL_COMPUTER_PLAY_ROCK, EL_COMPUTER_PLAY_SCISSORS];
-const ARR_EL_USER_PLAYS = [EL_USER_PLAY_PAPER, EL_USER_PLAY_ROCK, EL_USER_PLAY_SCISSORS];
+const ARR_COMPUTER_PLAY_IMAGES = [EL_COMPUTER_PLAY_PAPER, EL_COMPUTER_PLAY_ROCK, EL_COMPUTER_PLAY_SCISSORS];
 const ARR_PLAYS = [PLAY_PAPER, PLAY_ROCK, PLAY_SCISSORS];
+const ARR_USER_PLAY_IMAGES = [EL_USER_PLAY_PAPER, EL_USER_PLAY_ROCK, EL_USER_PLAY_SCISSORS];

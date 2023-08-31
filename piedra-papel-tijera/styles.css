@@ -31,12 +31,12 @@ body {
   }
 }
 
-.fade-in {
+.image-fade-in {
   animation-duration: 1s;
   animation-name: fade-in;
 }
 
-.fade-out {
+.image-fade-out {
   animation-duration: 1s;
   animation-name: fade-out;
 }

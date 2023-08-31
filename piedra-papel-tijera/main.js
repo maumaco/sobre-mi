@@ -4,7 +4,6 @@ let computerPlay;
 let computerScore;
 let pointsToWin;
 let rounds;
-let userName;
 let userPlay;
 let userScore;
 
@@ -20,7 +19,7 @@ setAppInitialConfiguration();
 
 // Adjuntamos los controladores de eventos de la entrada de texto "Nombre"
 
-EL_NAME_INPUT.addEventListener('change', sanitizeControlValue);
+EL_NAME_INPUT.addEventListener('change', sanitizeInputValue);
 
 EL_NAME_INPUT.addEventListener('change', validateUserName);
 
@@ -31,7 +30,7 @@ EL_NAME_INPUT.addEventListener('click', function (ev) {
 
 // Adjuntamos los controladores de eventos de la entrada de texto "Rondas"
 
-EL_ROUNDS_INPUT.addEventListener('change', sanitizeControlValue);
+EL_ROUNDS_INPUT.addEventListener('change', sanitizeInputValue);
 
 EL_ROUNDS_INPUT.addEventListener('change', validateRounds);
 
