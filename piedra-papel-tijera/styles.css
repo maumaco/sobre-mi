@@ -234,12 +234,12 @@ footer a {
 
 .image-fade-in {
   animation-duration: 1s;
-  animation-name: fade-in;
+  animation-name: image-fade-in;
 }
 
 .image-fade-out {
   animation-duration: 1s;
-  animation-name: fade-out;
+  animation-name: image-fade-out;
 }
 
 #user-plays .play:hover {
