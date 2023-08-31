@@ -11,7 +11,7 @@ function setAppInitialConfiguration() {
   setInputSize(EL_ROUNDS_INPUT, CONF_ROUNDS_INPUT_SIZE);
   setInputValue(EL_ROUNDS_INPUT, CONF_ROUNDS);
 
-  showMessage(MSG_CONFIGURE_NAME_AND_ROUNDS);
+  showMessage(MSG_CONFIGURE_NAME_AND_ROUNDS, CLASS_MESSAGE);
 
   EL_NAME_INPUT.focus();
 }
@@ -43,7 +43,7 @@ function resetAppConfiguration() {
 
   deleteMessage();
 
-  showMessage(MSG_CONFIGURE_NAME_AND_ROUNDS);
+  showMessage(MSG_CONFIGURE_NAME_AND_ROUNDS, CLASS_MESSAGE);
 
   setTextContent(EL_USER_SCORE_NUMBER, 0);
   setTextContent(EL_COMPUTER_SCORE_NUMBER, 0);
@@ -139,7 +139,7 @@ function validateUserName(ev) {
     setControlDisabled(EL_ROUNDS_INPUT, true);
     setControlDisabled(EL_PLAY_BUTTON, true);
 
-    showMessage(error);
+    showMessage(error, CLASS_ERROR);
   }
   else {
     setControlDisabled(EL_ROUNDS_INPUT, false);
@@ -164,7 +164,7 @@ function validateRounds(ev) {
     setControlDisabled(EL_NAME_INPUT, true);
     setControlDisabled(EL_PLAY_BUTTON, true);
 
-    showMessage(error);
+    showMessage(error, CLASS_ERROR);
   }
   else {
     setControlDisabled(EL_NAME_INPUT, false);
@@ -221,13 +221,27 @@ function setTextContent(node, text) {
 }
 
 
-function showMessage(message) {
+function showMessage(message, messageClass) {
+
+  switch (messageClass) {
+    case CLASS_MESSAGE:
+      EL_MESSAGE.classList.remove(CLASS_ERROR);
+      EL_MESSAGE.classList.add(CLASS_MESSAGE);
+      break;
+
+      case CLASS_ERROR:
+      EL_MESSAGE.classList.remove(CLASS_MESSAGE);
+      EL_MESSAGE.classList.add(CLASS_ERROR);
+  }
 
   setTextContent(EL_MESSAGE_TEXT, message);
 }
 
 
 function deleteMessage() {
+
+  EL_MESSAGE.classList.remove(CLASS_ERROR);
+  EL_MESSAGE.classList.remove(CLASS_MESSAGE);
 
   setTextContent(EL_MESSAGE_TEXT, '');
 }
@@ -316,7 +330,7 @@ function playRound(ev) {
 
     addUserPlaysEventListeners();
 
-    showMessage(MSG_DO_CLICK);
+    showMessage(MSG_DO_CLICK, CLASS_MESSAGE);
   }
   else {
     removeUserPlaysEventListeners();
@@ -395,7 +409,7 @@ function setRoundResult() {
   let roundWinner = getRoundWinner();
 
   if (!roundWinner) {
-    showMessage(MSG_TIE_NO_POINTS);
+    showMessage(MSG_TIE_NO_POINTS, CLASS_MESSAGE);
     playRoundTimeout = window.setTimeout(playRound, CONF_PLAY_ROUND_TIMEOUT_MS);
   }
   else {
@@ -404,11 +418,11 @@ function setRoundResult() {
         setTextContent(EL_USER_SCORE_NUMBER, ++userScore);
 
         if (userScore === pointsToWin) {
-          showMessage(MSG_USER_WINS);
+          showMessage(MSG_USER_WINS, CLASS_MESSAGE);
           setAppLastConfiguration();
         }
         else {
-          showMessage(MSG_USER_POINT);
+          showMessage(MSG_USER_POINT, CLASS_MESSAGE);
           playRoundTimeout = window.setTimeout(playRound, CONF_PLAY_ROUND_TIMEOUT_MS);
         }
         break;
@@ -417,11 +431,11 @@ function setRoundResult() {
         setTextContent(EL_COMPUTER_SCORE_NUMBER, ++computerScore);
 
         if (computerScore === pointsToWin) {
-          showMessage(MSG_COMPUTER_WINS);
+          showMessage(MSG_COMPUTER_WINS, CLASS_MESSAGE);
           setAppLastConfiguration();
         }
         else {
-          showMessage(MSG_COMPUTER_POINT);
+          showMessage(MSG_COMPUTER_POINT, CLASS_MESSAGE);
           playRoundTimeout = window.setTimeout(playRound, CONF_PLAY_ROUND_TIMEOUT_MS);
         }
     }

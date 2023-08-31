@@ -47,8 +47,10 @@ const WIN_USER = 'user';
 
 // Clases (atributo class)
 
+const CLASS_ERROR = 'error';
 const CLASS_IMAGE_FADE_IN = 'image-fade-in';
 const CLASS_IMAGE_FADE_OUT = 'image-fade-out';
+const CLASS_MESSAGE = 'message';
 
 
 // Identificadores (atributo id)
@@ -57,6 +59,7 @@ const ID_COMPUTER_PLAY_PAPER = 'computer-play-paper';
 const ID_COMPUTER_PLAY_ROCK = 'computer-play-rock';
 const ID_COMPUTER_PLAY_SCISSORS = 'computer-play-scissors';
 const ID_COMPUTER_SCORE_NUMBER = 'computer-score-number';
+const ID_MESSAGE = 'message';
 const ID_MESSAGE_TEXT = 'message-text';
 const ID_NAME_INPUT = 'name-input';
 const ID_PLAY_BUTTON = 'play-button';
@@ -75,6 +78,7 @@ const EL_COMPUTER_PLAY_PAPER = document.getElementById(ID_COMPUTER_PLAY_PAPER);
 const EL_COMPUTER_PLAY_ROCK = document.getElementById(ID_COMPUTER_PLAY_ROCK);
 const EL_COMPUTER_PLAY_SCISSORS = document.getElementById(ID_COMPUTER_PLAY_SCISSORS);
 const EL_COMPUTER_SCORE_NUMBER = document.getElementById(ID_COMPUTER_SCORE_NUMBER);
+const EL_MESSAGE = document.getElementById(ID_MESSAGE);
 const EL_MESSAGE_TEXT = document.getElementById(ID_MESSAGE_TEXT);
 const EL_NAME_INPUT = document.getElementById(ID_NAME_INPUT);
 const EL_PLAY_BUTTON = document.getElementById(ID_PLAY_BUTTON);
