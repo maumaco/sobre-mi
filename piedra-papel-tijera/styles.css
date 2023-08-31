@@ -169,6 +169,7 @@ main {
 
 #computer-plays .play {
   background-color: #40cfff;
+  transform: scaleX(-1);
 }
 
 .play {
