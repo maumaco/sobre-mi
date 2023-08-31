@@ -56,7 +56,7 @@ const CLASS_IMAGE_FADE_OUT = 'image-fade-out';
 const ID_COMPUTER_PLAY_PAPER = 'computer-play-paper';
 const ID_COMPUTER_PLAY_ROCK = 'computer-play-rock';
 const ID_COMPUTER_PLAY_SCISSORS = 'computer-play-scissors';
-const ID_COMPUTER_SCORE = 'computer-score';
+const ID_COMPUTER_SCORE_NUMBER = 'computer-score-number';
 const ID_MESSAGE_TEXT = 'message-text';
 const ID_NAME_INPUT = 'name-input';
 const ID_PLAY_BUTTON = 'play-button';
@@ -66,7 +66,7 @@ const ID_USER_NAME = 'user-name';
 const ID_USER_PLAY_PAPER = 'user-play-paper';
 const ID_USER_PLAY_ROCK = 'user-play-rock';
 const ID_USER_PLAY_SCISSORS = 'user-play-scissors';
-const ID_USER_SCORE = 'user-score';
+const ID_USER_SCORE_NUMBER = 'user-score-number';
 
 
 // Elementos HTML
@@ -74,7 +74,7 @@ const ID_USER_SCORE = 'user-score';
 const EL_COMPUTER_PLAY_PAPER = document.getElementById(ID_COMPUTER_PLAY_PAPER);
 const EL_COMPUTER_PLAY_ROCK = document.getElementById(ID_COMPUTER_PLAY_ROCK);
 const EL_COMPUTER_PLAY_SCISSORS = document.getElementById(ID_COMPUTER_PLAY_SCISSORS);
-const EL_COMPUTER_SCORE = document.getElementById(ID_COMPUTER_SCORE);
+const EL_COMPUTER_SCORE_NUMBER = document.getElementById(ID_COMPUTER_SCORE_NUMBER);
 const EL_MESSAGE_TEXT = document.getElementById(ID_MESSAGE_TEXT);
 const EL_NAME_INPUT = document.getElementById(ID_NAME_INPUT);
 const EL_PLAY_BUTTON = document.getElementById(ID_PLAY_BUTTON);
@@ -84,7 +84,7 @@ const EL_USER_NAME = document.getElementById(ID_USER_NAME);
 const EL_USER_PLAY_PAPER = document.getElementById(ID_USER_PLAY_PAPER);
 const EL_USER_PLAY_ROCK = document.getElementById(ID_USER_PLAY_ROCK);
 const EL_USER_PLAY_SCISSORS = document.getElementById(ID_USER_PLAY_SCISSORS);
-const EL_USER_SCORE = document.getElementById(ID_USER_SCORE);
+const EL_USER_SCORE_NUMBER = document.getElementById(ID_USER_SCORE_NUMBER);
 
 
 // Arreglos

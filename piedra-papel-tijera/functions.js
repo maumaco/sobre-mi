@@ -43,8 +43,10 @@ function resetAppConfiguration() {
 
   deleteMessage();
 
-  setTextContent(EL_USER_SCORE, 0);
-  setTextContent(EL_COMPUTER_SCORE, 0);
+  showMessage(MSG_CONFIGURE_NAME_AND_ROUNDS);
+
+  setTextContent(EL_USER_SCORE_NUMBER, 0);
+  setTextContent(EL_COMPUTER_SCORE_NUMBER, 0);
 
   showPlayImages(ARR_USER_PLAY_IMAGES);
   showPlayImages(ARR_COMPUTER_PLAY_IMAGES);
@@ -66,6 +68,9 @@ function setGameConfiguration() {
   pointsToWin = (rounds + 1) / 2;
   userScore = 0;
   computerScore = 0;
+
+  setTextContent(EL_USER_SCORE_NUMBER, userScore);
+  setTextContent(EL_COMPUTER_SCORE_NUMBER, computerScore);
 }
 
 
@@ -396,7 +401,7 @@ function setRoundResult() {
   else {
     switch (roundWinner) {
       case WIN_USER:
-        setTextContent(EL_USER_SCORE, ++userScore);
+        setTextContent(EL_USER_SCORE_NUMBER, ++userScore);
 
         if (userScore === pointsToWin) {
           showMessage(MSG_USER_WINS);
@@ -409,7 +414,7 @@ function setRoundResult() {
         break;
 
       case WIN_COMPUTER:
-        setTextContent(EL_COMPUTER_SCORE, ++computerScore);
+        setTextContent(EL_COMPUTER_SCORE_NUMBER, ++computerScore);
 
         if (computerScore === pointsToWin) {
           showMessage(MSG_COMPUTER_WINS);
